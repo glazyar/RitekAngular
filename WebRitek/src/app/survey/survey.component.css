@@ -1,0 +1,12 @@
+.editcol {
+    background-color: #98f2f8 !important;
+    color: #000000 !important;
+}
+
+.noeditcol {
+    background-color: #2CA8B1 !important;
+    color: #ffffff !important;
+}
+.ui-datatable table {
+    table-layout: auto
+}

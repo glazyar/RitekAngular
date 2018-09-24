@@ -1,0 +1,432 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{A5212035-725E-48F5-B4BC-6F9664B26864}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>Core</RootNamespace>
+    <AssemblyName>Core</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=11.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.11.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Model\DTO\PlanOperNftDTO.cs" />
+    <Compile Include="Model\SQL\BUSH_NSI.cs">
+      <DependentUpon>TPP_NSI.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\SQL\CEH_NSI.cs">
+      <DependentUpon>TPP_NSI.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\SQL\CLS_CAPITAL_REMONT.cs">
+      <DependentUpon>TPP_NSI.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\SQL\CLS_EXPL_SPOSOB.cs">
+      <DependentUpon>TPP_NSI.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\SQL\CLS_GRP_STATES.cs">
+      <DependentUpon>TPP_NSI.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\SQL\CLS_REMONT_REASON.cs">
+      <DependentUpon>TPP_NSI.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\SQL\CLS_SKV_CATEGORY.cs">
+      <DependentUpon>TPP_NSI.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\SQL\CLS_SKV_NAZN.cs">
+      <DependentUpon>TPP_NSI.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\SQL\CLS_SKV_ZH_CICL.cs">
+      <DependentUpon>TPP_NSI.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\SQL\CLS_STOP_REASON.cs">
+      <DependentUpon>TPP_NSI.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\SQL\CLS_TEK_REMONT.cs">
+      <DependentUpon>TPP_NSI.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\SQL\Config.cs">
+      <DependentUpon>RITEK_SURVEY_TPP4.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\SQL\GROUP_NSI.cs">
+      <DependentUpon>TPP_NSI.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\SQL\HEADERS_NSI.cs">
+      <DependentUpon>TPP_NSI.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\SQL\hp_PlanOperNFT_Result.cs">
+      <DependentUpon>RITEK_WEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\SQL\MST_NSI.cs">
+      <DependentUpon>TPP_NSI.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\SQL\OBJECT_ACCESS.cs">
+      <DependentUpon>TPP_NSI.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\SQL\OBJECT_LIST.cs">
+      <DependentUpon>TPP_NSI.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\SQL\OTHER_OBJECT_LIST.cs">
+      <DependentUpon>TPP_NSI.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\SQL\PARAMETER_NSI.cs">
+      <DependentUpon>TPP_NSI.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\SQL\PARAMETER_SECOND.cs">
+      <DependentUpon>TPP_NSI.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\SQL\PERSONAL.cs">
+      <DependentUpon>RITEK_SURVEY_TPP4.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\SQL\PERSON_OBJECT_ACCESS.cs">
+      <DependentUpon>RITEK_SURVEY_TPP4.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\SQL\PERSON_ROLES.cs">
+      <DependentUpon>RITEK_SURVEY_TPP4.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\SQL\PLOT_NSI.cs">
+      <DependentUpon>TPP_NSI.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\SQL\RABOTY_DEVELOPMENT_COMMON.cs">
+      <DependentUpon>RITEK_SURVEY_TPP4.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\SQL\RABOTY_DEVELOPMENT_DAILY.cs">
+      <DependentUpon>RITEK_SURVEY_TPP4.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\SQL\RABOTY_DEVELOPMENT_WORKS.cs">
+      <DependentUpon>RITEK_SURVEY_TPP4.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\SQL\RABOTY_DRILLING_COMMON.cs">
+      <DependentUpon>RITEK_SURVEY_TPP4.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\SQL\RABOTY_DRILLING_DRIFTING.cs">
+      <DependentUpon>RITEK_SURVEY_TPP4.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\SQL\RABOTY_DRILLING_PERSONAL.cs">
+      <DependentUpon>RITEK_SURVEY_TPP4.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\SQL\RABOTY_DRILLING_WORKS.cs">
+      <DependentUpon>RITEK_SURVEY_TPP4.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\SQL\RABOTY_REPAIR_COMMON.cs">
+      <DependentUpon>RITEK_SURVEY_TPP4.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\SQL\RABOTY_REPAIR_DAILY.cs">
+      <DependentUpon>RITEK_SURVEY_TPP4.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\SQL\RABOTY_REPAIR_WORKS.cs">
+      <DependentUpon>RITEK_SURVEY_TPP4.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\SQL\RITEK_SURVEY_TPP1.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RITEK_SURVEY_TPP1.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\SQL\RITEK_SURVEY_TPP1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RITEK_SURVEY_TPP1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\SQL\RITEK_SURVEY_TPP1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RITEK_SURVEY_TPP1.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Model\SQL\RITEK_SURVEY_TPP2.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RITEK_SURVEY_TPP2.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\SQL\RITEK_SURVEY_TPP2.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RITEK_SURVEY_TPP2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\SQL\RITEK_SURVEY_TPP2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RITEK_SURVEY_TPP2.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Model\SQL\RITEK_SURVEY_TPP3.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RITEK_SURVEY_TPP3.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\SQL\RITEK_SURVEY_TPP3.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RITEK_SURVEY_TPP3.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\SQL\RITEK_SURVEY_TPP3.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RITEK_SURVEY_TPP3.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Model\SQL\RITEK_SURVEY_TPP4.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RITEK_SURVEY_TPP4.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\SQL\RITEK_SURVEY_TPP4.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RITEK_SURVEY_TPP4.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\SQL\RITEK_SURVEY_TPP4.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RITEK_SURVEY_TPP4.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Model\SQL\RITEK_WEB.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RITEK_WEB.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\SQL\RITEK_WEB.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RITEK_WEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\SQL\RITEK_WEB.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RITEK_WEB.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Model\SQL\ROLES_NSI.cs">
+      <DependentUpon>TPP_NSI.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\SQL\SKV_NSI.cs">
+      <DependentUpon>RITEK_SURVEY_TPP4.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\SQL\STANDARD_PARAMETERS.cs">
+      <DependentUpon>TPP_NSI.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\SQL\SUPERHEADERS.cs">
+      <DependentUpon>TPP_NSI.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\SQL\Survey.cs">
+      <DependentUpon>RITEK_SURVEY_TPP4.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\SQL\SURVEY_INFO.cs">
+      <DependentUpon>RITEK_SURVEY_TPP4.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\SQL\SURVEY_STATES.cs">
+      <DependentUpon>TPP_NSI.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\SQL\SURVEY_TYPES.cs">
+      <DependentUpon>TPP_NSI.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\SQL\sysdiagrams.cs">
+      <DependentUpon>TPP_NSI.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\SQL\TECH_OBJ_NSI.cs">
+      <DependentUpon>TPP_NSI.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\SQL\TECH_OBJ_TYPE.cs">
+      <DependentUpon>TPP_NSI.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\SQL\TPP_NSI.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TPP_NSI.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\SQL\TPP_NSI.cs">
+      <DependentUpon>TPP_NSI.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\SQL\TPP_NSI.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TPP_NSI.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Model\SQL\TPP_NSI1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TPP_NSI.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Service\PlanService.cs" />
+    <Compile Include="Service\TestService.cs" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <EntityDeploy Include="Model\SQL\TPP_NSI.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>TPP_NSI.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <EntityDeploy Include="Model\SQL\RITEK_SURVEY_TPP1.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>RITEK_SURVEY_TPP1.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="Model\SQL\RITEK_SURVEY_TPP1.edmx.diagram">
+      <DependentUpon>RITEK_SURVEY_TPP1.edmx</DependentUpon>
+    </None>
+    <EntityDeploy Include="Model\SQL\RITEK_SURVEY_TPP2.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>RITEK_SURVEY_TPP2.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="Model\SQL\RITEK_SURVEY_TPP2.edmx.diagram">
+      <DependentUpon>RITEK_SURVEY_TPP2.edmx</DependentUpon>
+    </None>
+    <EntityDeploy Include="Model\SQL\RITEK_SURVEY_TPP3.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>RITEK_SURVEY_TPP3.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="Model\SQL\RITEK_SURVEY_TPP3.edmx.diagram">
+      <DependentUpon>RITEK_SURVEY_TPP3.edmx</DependentUpon>
+    </None>
+    <EntityDeploy Include="Model\SQL\RITEK_SURVEY_TPP4.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>RITEK_SURVEY_TPP4.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="Model\SQL\RITEK_SURVEY_TPP4.edmx.diagram">
+      <DependentUpon>RITEK_SURVEY_TPP4.edmx</DependentUpon>
+    </None>
+    <EntityDeploy Include="Model\SQL\RITEK_WEB.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>RITEK_WEB.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="Model\SQL\RITEK_WEB.edmx.diagram">
+      <DependentUpon>RITEK_WEB.edmx</DependentUpon>
+    </None>
+    <None Include="Model\SQL\TPP_NSI.edmx.diagram">
+      <DependentUpon>TPP_NSI.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Model\SQL\RITEK_SURVEY_TPP1.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>RITEK_SURVEY_TPP1.edmx</DependentUpon>
+      <LastGenOutput>RITEK_SURVEY_TPP1.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Model\SQL\RITEK_SURVEY_TPP1.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>RITEK_SURVEY_TPP1.edmx</DependentUpon>
+      <LastGenOutput>RITEK_SURVEY_TPP1.cs</LastGenOutput>
+    </Content>
+    <Content Include="Model\SQL\RITEK_SURVEY_TPP2.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>RITEK_SURVEY_TPP2.edmx</DependentUpon>
+      <LastGenOutput>RITEK_SURVEY_TPP2.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Model\SQL\RITEK_SURVEY_TPP2.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>RITEK_SURVEY_TPP2.edmx</DependentUpon>
+      <LastGenOutput>RITEK_SURVEY_TPP2.cs</LastGenOutput>
+    </Content>
+    <Content Include="Model\SQL\RITEK_SURVEY_TPP3.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>RITEK_SURVEY_TPP3.edmx</DependentUpon>
+      <LastGenOutput>RITEK_SURVEY_TPP3.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Model\SQL\RITEK_SURVEY_TPP3.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>RITEK_SURVEY_TPP3.edmx</DependentUpon>
+      <LastGenOutput>RITEK_SURVEY_TPP3.cs</LastGenOutput>
+    </Content>
+    <Content Include="Model\SQL\RITEK_SURVEY_TPP4.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>RITEK_SURVEY_TPP4.edmx</DependentUpon>
+      <LastGenOutput>RITEK_SURVEY_TPP4.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Model\SQL\RITEK_SURVEY_TPP4.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>RITEK_SURVEY_TPP4.edmx</DependentUpon>
+      <LastGenOutput>RITEK_SURVEY_TPP4.cs</LastGenOutput>
+    </Content>
+    <Content Include="Model\SQL\RITEK_WEB.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>RITEK_WEB.edmx</DependentUpon>
+      <LastGenOutput>RITEK_WEB.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Model\SQL\RITEK_WEB.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>RITEK_WEB.edmx</DependentUpon>
+      <LastGenOutput>RITEK_WEB.cs</LastGenOutput>
+    </Content>
+    <Content Include="Model\SQL\TPP_NSI.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>TPP_NSI.Context.cs</LastGenOutput>
+      <DependentUpon>TPP_NSI.edmx</DependentUpon>
+    </Content>
+    <Content Include="Model\SQL\TPP_NSI.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>TPP_NSI.edmx</DependentUpon>
+      <LastGenOutput>TPP_NSI1.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

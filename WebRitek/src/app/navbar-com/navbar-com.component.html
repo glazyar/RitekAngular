@@ -1,0 +1,37 @@
+﻿<nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <img src="src/img/RITEK_logo.png" width="50" height="50" class="d-inline-block align-top" alt="">
+        </div>
+        <ul class="nav navbar-nav">
+            <li class="active"><a routerLink="/start" routerLinkActive="active"><i class="fa fa-hand-paper-o" aria-hidden="true"></i> АРМ ручного ввода</a></li>
+            <li class="dropdown">
+                <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                    <i class="fa fa-pencil-square-o" aria-hidden="true"></i> Сводки
+                    <i class="fa fa-caret-down" aria-hidden="true"></i>
+                </a>
+                <ul class="dropdown-menu">
+                    <li><a href="#">Оперативная суточная сводка</a></li>
+                    <li><a href="#">Инвентаризация ТПП</a></li>
+                    <li><a href="#">Расчёт добычи нефти по ТПП</a></li>
+                </ul>
+            </li>
+            <li class="dropdown">
+                <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                    <i class="fa fa-calendar" aria-hidden="true"></i> Ввод плановых показателей
+                    <i class="fa fa-caret-down" aria-hidden="true"></i>
+                </a>
+                <ul class="dropdown-menu">
+                    <li><a [routerLink]="['/survey']">Оперативная суточная сводка</a></li>
+                    <li><a href="#">Инвентаризация ТПП</a></li>
+                    <li><a href="#">Расчёт добычи нефти по ТПП</a></li>
+                </ul>
+            </li>
+            <li><a href="#"><i class="fa fa-cog" aria-hidden="true"></i> Администрирование</a></li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+            <li class="active"><a href="#"><i class="fa fa-user-circle-o" aria-hidden="true"></i> Имя пользователя</a></li>
+            <!--<li><a href="#"><i class="fa fa-sign-in" aria-hidden="true"></i> Login</a></li>-->
+        </ul>
+    </div>
+</nav>

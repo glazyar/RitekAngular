@@ -1,0 +1,33 @@
+﻿<div style="margin-top:20px;width:55%;float: left; left:0">
+    <p-table *ngIf="dataPlan" [value]="dataPlan" [responsive]="true">
+        <ng-template pTemplate="caption">
+            Добыча нефти
+        </ng-template>
+        <ng-template pTemplate="header">
+            <tr>
+                <th>Наименование</th>
+                <th>План на месяц (т) <i class="fa fa-pencil" aria-hidden="true"></i></th>
+                <th>График на месяц (т)</th>
+            </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-data>
+            <tr>
+                <td align="left">{{data.Title}}</td>
+                <td [ngClass]="'editcol'" align="center" pEditableColumn>
+                    <p-cellEditor>
+                        <ng-template pTemplate="input">
+                            <input style="text-align:center" type="number" [(ngModel)]="data.PlanMonth">
+                        </ng-template>
+                        <ng-template pTemplate="output">
+                            {{data.PlanMonth}}
+                        </ng-template>
+                    </p-cellEditor>
+                </td>
+                <td align="center">{{data.GraphicMonth}}</td>
+            </tr>
+        </ng-template>
+        <ng-template pTemplate="summary">
+            Итого по ТПП
+        </ng-template>
+    </p-table>
+</div>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="5d55bcf4886c4c048ca396fd841f31f7" Name="Diagram1" ZoomLevel="85">
+        <EntityTypeShape EntityType="RITEK_SURVEY_TPP3Model.RABOTY_DEVELOPMENT_COMMON" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="RITEK_SURVEY_TPP3Model.RABOTY_DEVELOPMENT_DAILY" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="RITEK_SURVEY_TPP3Model.RABOTY_DEVELOPMENT_WORKS" Width="1.5" PointX="4.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="RITEK_SURVEY_TPP3Model.RABOTY_DRILLING_COMMON" Width="1.5" PointX="2.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="RITEK_SURVEY_TPP3Model.RABOTY_DRILLING_DRIFTING" Width="1.5" PointX="4.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="RITEK_SURVEY_TPP3Model.RABOTY_DRILLING_PERSONAL" Width="1.5" PointX="6.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="RITEK_SURVEY_TPP3Model.RABOTY_DRILLING_WORKS" Width="1.5" PointX="6.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="RITEK_SURVEY_TPP3Model.RABOTY_REPAIR_COMMON" Width="1.5" PointX="8.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="RITEK_SURVEY_TPP3Model.RABOTY_REPAIR_DAILY" Width="1.5" PointX="8.75" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="RITEK_SURVEY_TPP3Model.RABOTY_REPAIR_WORKS" Width="1.5" PointX="4.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="RITEK_SURVEY_TPP3Model.SKV_NSI" Width="1.5" PointX="10.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="RITEK_SURVEY_TPP3Model.Survey" Width="1.5" PointX="10.75" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="RITEK_SURVEY_TPP3Model.SURVEY_INFO" Width="1.5" PointX="12.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="RITEK_SURVEY_TPP3Model.Config" Width="1.5" PointX="12.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="RITEK_SURVEY_TPP3Model.PERSON_OBJECT_ACCESS" Width="1.5" PointX="12.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="RITEK_SURVEY_TPP3Model.PERSON_ROLES" Width="1.5" PointX="12.75" PointY="12.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="RITEK_SURVEY_TPP3Model.PERSONAL" Width="1.5" PointX="0.75" PointY="13.75" IsExpanded="true" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

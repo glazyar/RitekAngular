@@ -1,0 +1,1266 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="Хранилище RITEK_SURVEY_TPP3Model" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <!--Ошибки, обнаруженные при создании:
+предупреждение 6002: В таблице или представлении "RITEK_SURVEY_TPP3.dbo.Config" не определен первичный ключ. Ключ был выведен, а определение таблицы или представления было создано в режиме только для чтения.-->
+        <EntityType Name="Config">
+          <Key>
+            <PropertyRef Name="Name" />
+            <PropertyRef Name="Value" />
+          </Key>
+          <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Value" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Description" Type="nvarchar(max)" />
+        </EntityType>
+        <!--Ошибки, обнаруженные при создании:
+предупреждение 6002: В таблице или представлении "RITEK_SURVEY_TPP3.dbo.PERSON_OBJECT_ACCESS" не определен первичный ключ. Ключ был выведен, а определение таблицы или представления было создано в режиме только для чтения.-->
+        <EntityType Name="PERSON_OBJECT_ACCESS">
+          <Key>
+            <PropertyRef Name="Id" />
+            <PropertyRef Name="Login" />
+            <PropertyRef Name="kodTPP" />
+            <PropertyRef Name="kodCEH" />
+            <PropertyRef Name="AccessLevel" />
+            <PropertyRef Name="DELETED" />
+          </Key>
+          <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Login" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="kodTPP" Type="int" Nullable="false" />
+          <Property Name="kodCEH" Type="int" Nullable="false" />
+          <Property Name="AccessLevel" Type="int" Nullable="false" />
+          <Property Name="DELETED" Type="bit" Nullable="false" />
+        </EntityType>
+        <!--Ошибки, обнаруженные при создании:
+предупреждение 6002: В таблице или представлении "RITEK_SURVEY_TPP3.dbo.PERSON_ROLES" не определен первичный ключ. Ключ был выведен, а определение таблицы или представления было создано в режиме только для чтения.-->
+        <EntityType Name="PERSON_ROLES">
+          <Key>
+            <PropertyRef Name="Id" />
+            <PropertyRef Name="Login" />
+            <PropertyRef Name="RoleId" />
+            <PropertyRef Name="DELETED" />
+          </Key>
+          <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Login" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="RoleId" Type="int" Nullable="false" />
+          <Property Name="DELETED" Type="bit" Nullable="false" />
+        </EntityType>
+        <!--Ошибки, обнаруженные при создании:
+предупреждение 6002: В таблице или представлении "RITEK_SURVEY_TPP3.dbo.PERSONAL" не определен первичный ключ. Ключ был выведен, а определение таблицы или представления было создано в режиме только для чтения.-->
+        <EntityType Name="PERSONAL">
+          <Key>
+            <PropertyRef Name="Id" />
+            <PropertyRef Name="Login" />
+            <PropertyRef Name="Name" />
+            <PropertyRef Name="kodTPP" />
+          </Key>
+          <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Login" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Password" Type="nvarchar(max)" />
+          <Property Name="kodTPP" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="RABOTY_DEVELOPMENT_COMMON">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="SkvId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="StartDate" Type="datetime" Nullable="false" />
+          <Property Name="FinishDate" Type="datetime" />
+          <Property Name="Contractor" Type="nvarchar(max)" />
+          <Property Name="Master" Type="nvarchar(max)" />
+          <Property Name="Account" Type="int" />
+          <Property Name="Position" Type="int" />
+          <Property Name="NumberInPosition" Type="int" />
+          <Property Name="WaitingCount" Type="int" />
+          <Property Name="WaitingDebit" Type="float" />
+          <Property Name="ProjectDepth" Type="float" />
+          <Property Name="ProjectLevel" Type="nvarchar(max)" />
+          <Property Name="DevelopStartDatePlan" Type="datetime" />
+          <Property Name="DevelopStartDateFact" Type="datetime" />
+          <Property Name="DevelopFinishDatePlan" Type="datetime" />
+          <Property Name="DevelopFinishDateFact" Type="datetime" />
+          <Property Name="ImplementDatePlan" Type="datetime" />
+          <Property Name="ImplementDateFact" Type="datetime" />
+          <Property Name="PerfInterval" Type="nvarchar(max)" />
+          <Property Name="NormoTime" Type="float" />
+          <Property Name="ActDate" Type="datetime" />
+          <Property Name="ContinueOnPlan" Type="nvarchar(max)" />
+          <Property Name="CommonTime" Type="float" />
+          <Property Name="NonNormoTime" Type="float" />
+          <Property Name="Created" Type="datetime" Nullable="false" />
+          <Property Name="Author" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="LastSaved" Type="datetime" Nullable="false" />
+          <Property Name="LastEditor" Type="nvarchar(max)" Nullable="false" />
+        </EntityType>
+        <EntityType Name="RABOTY_DEVELOPMENT_DAILY">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="CommonId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Date" Type="datetime" Nullable="false" />
+          <Property Name="Created" Type="datetime" Nullable="false" />
+          <Property Name="Author" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="LastSaved" Type="datetime" Nullable="false" />
+          <Property Name="LastEditor" Type="nvarchar(max)" Nullable="false" />
+        </EntityType>
+        <EntityType Name="RABOTY_DEVELOPMENT_WORKS">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="CommonId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Date" Type="datetime" Nullable="false" />
+          <Property Name="Shift" Type="int" />
+          <Property Name="Face" Type="int" />
+          <Property Name="Drift" Type="float" />
+          <Property Name="Duration" Type="float" />
+          <Property Name="Work" Type="nvarchar(max)" />
+          <Property Name="Created" Type="datetime" Nullable="false" />
+          <Property Name="Author" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="LastSaved" Type="datetime" Nullable="false" />
+          <Property Name="LastEditor" Type="nvarchar(max)" Nullable="false" />
+        </EntityType>
+        <EntityType Name="RABOTY_DRILLING_COMMON">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="SkvId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="StartDate" Type="datetime" Nullable="false" />
+          <Property Name="FinishDate" Type="datetime" />
+          <Property Name="DrillingEngine" Type="nvarchar(max)" />
+          <Property Name="Contractor" Type="nvarchar(max)" />
+          <Property Name="Master" Type="nvarchar(max)" />
+          <Property Name="Supervisor" Type="nvarchar(max)" />
+          <Property Name="ProjectDepth" Type="float" />
+          <Property Name="ProjectLevel" Type="nvarchar(max)" />
+          <Property Name="DrillStartDatePlan" Type="datetime" />
+          <Property Name="DrillStartDateFact" Type="datetime" />
+          <Property Name="DrillFinishDatePlan" Type="datetime" />
+          <Property Name="DrillFinishDateFact" Type="datetime" />
+          <Property Name="ImplementDatePlan" Type="datetime" />
+          <Property Name="ImplementDateFact" Type="datetime" />
+          <Property Name="SpeedPlan" Type="float" />
+          <Property Name="SpeedFact" Type="float" />
+          <Property Name="ContsructionPlan" Type="nvarchar(max)" />
+          <Property Name="ContsructionFact" Type="nvarchar(max)" />
+          <Property Name="ParamsPlan" Type="nvarchar(max)" />
+          <Property Name="ParamsFact" Type="nvarchar(max)" />
+          <Property Name="RegimePlan" Type="nvarchar(max)" />
+          <Property Name="RegimeFact" Type="nvarchar(max)" />
+          <Property Name="KNBKPlan" Type="nvarchar(max)" />
+          <Property Name="KNBKFact" Type="nvarchar(max)" />
+          <Property Name="Created" Type="datetime" Nullable="false" />
+          <Property Name="Author" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="LastSaved" Type="datetime" Nullable="false" />
+          <Property Name="LastEditor" Type="nvarchar(max)" Nullable="false" />
+        </EntityType>
+        <EntityType Name="RABOTY_DRILLING_DRIFTING">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="CommonId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Date" Type="datetime" Nullable="false" />
+          <Property Name="Plan" Type="float" />
+          <Property Name="Fact" Type="float" />
+          <Property Name="Created" Type="datetime" Nullable="false" />
+          <Property Name="Author" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="LastSaved" Type="datetime" Nullable="false" />
+          <Property Name="LastEditor" Type="nvarchar(max)" Nullable="false" />
+        </EntityType>
+        <EntityType Name="RABOTY_DRILLING_PERSONAL">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="CommonId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Date" Type="datetime" Nullable="false" />
+          <Property Name="Shift" Type="int" Nullable="false" />
+          <Property Name="PersonName" Type="nvarchar(max)" />
+          <Property Name="Created" Type="datetime" Nullable="false" />
+          <Property Name="Author" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="LastSaved" Type="datetime" Nullable="false" />
+          <Property Name="LastEditor" Type="nvarchar(max)" Nullable="false" />
+        </EntityType>
+        <EntityType Name="RABOTY_DRILLING_WORKS">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="CommonId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Date" Type="datetime" Nullable="false" />
+          <Property Name="Shift" Type="int" />
+          <Property Name="Face" Type="int" />
+          <Property Name="Drift" Type="float" />
+          <Property Name="Duration" Type="float" />
+          <Property Name="Work" Type="nvarchar(max)" />
+          <Property Name="Created" Type="datetime" Nullable="false" />
+          <Property Name="Author" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="LastSaved" Type="datetime" Nullable="false" />
+          <Property Name="LastEditor" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Norma" Type="float" />
+          <Property Name="Fact" Type="float" />
+          <Property Name="Delay" Type="float" />
+        </EntityType>
+        <EntityType Name="RABOTY_REPAIR_COMMON">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="SkvId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="StartDate" Type="datetime" Nullable="false" />
+          <Property Name="FinishDate" Type="datetime" />
+          <Property Name="Contractor" Type="nvarchar(max)" />
+          <Property Name="Elevator" Type="nvarchar(max)" />
+          <Property Name="ComissionDate" Type="datetime" />
+          <Property Name="RepairStartDate" Type="datetime" />
+          <Property Name="RepairFinishDate" Type="datetime" />
+          <Property Name="WorkingDaysCount" Type="float" />
+          <Property Name="RejectedReason" Type="nvarchar(max)" />
+          <Property Name="FluidDebit" Type="float" />
+          <Property Name="OilDebit" Type="float" />
+          <Property Name="NDin" Type="float" />
+          <Property Name="Pz" Type="float" />
+          <Property Name="TargetDepth" Type="float" />
+          <Property Name="CurrentDepth" Type="float" />
+          <Property Name="ProjectLevel" Type="nvarchar(max)" />
+          <Property Name="PerfInterval" Type="nvarchar(max)" />
+          <Property Name="Diameter" Type="float" />
+          <Property Name="GNO_before" Type="nvarchar(max)" />
+          <Property Name="GNO_after" Type="nvarchar(max)" />
+          <Property Name="Suspension_before" Type="float" />
+          <Property Name="Suspension_after" Type="float" />
+          <Property Name="PlanProcedures" Type="nvarchar(max)" />
+          <Property Name="NormoTime" Type="float" />
+          <Property Name="Created" Type="datetime" Nullable="false" />
+          <Property Name="Author" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="LastSaved" Type="datetime" Nullable="false" />
+          <Property Name="LastEditor" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="RepairReasonId" Type="int" />
+        </EntityType>
+        <EntityType Name="RABOTY_REPAIR_DAILY">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="CommonId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Date" Type="datetime" Nullable="false" />
+          <Property Name="Normative" Type="float" />
+          <Property Name="FromRepairStart" Type="float" />
+          <Property Name="StartedPlan" Type="datetime" />
+          <Property Name="PlanWorks" Type="nvarchar(max)" />
+          <Property Name="BrigadeMoving" Type="nvarchar(max)" />
+          <Property Name="RepairPurpose" Type="nvarchar(max)" />
+          <Property Name="LateReason" Type="nvarchar(max)" />
+          <Property Name="Created" Type="datetime" Nullable="false" />
+          <Property Name="Author" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="LastSaved" Type="datetime" Nullable="false" />
+          <Property Name="LastEditor" Type="nvarchar(max)" Nullable="false" />
+        </EntityType>
+        <EntityType Name="RABOTY_REPAIR_WORKS">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="CommonId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Date" Type="datetime" Nullable="false" />
+          <Property Name="Shift" Type="int" />
+          <Property Name="Face" Type="int" />
+          <Property Name="Drift" Type="float" />
+          <Property Name="Duration" Type="float" />
+          <Property Name="NormDuration" Type="float" />
+          <Property Name="DeltaDuration" Type="float" />
+          <Property Name="ProductiveTime" Type="float" />
+          <Property Name="NonProductiveTimeCustomer" Type="float" />
+          <Property Name="NonProductiveTimeContractor" Type="float" />
+          <Property Name="Work" Type="nvarchar(max)" />
+          <Property Name="Created" Type="datetime" Nullable="false" />
+          <Property Name="Author" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="LastSaved" Type="datetime" Nullable="false" />
+          <Property Name="LastEditor" Type="nvarchar(max)" Nullable="false" />
+        </EntityType>
+        <EntityType Name="SKV_NSI">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Number" Type="nvarchar(max)" />
+          <Property Name="BushId" Type="int" />
+          <Property Name="kodMST" Type="int" />
+          <Property Name="kodSKV" Type="int" />
+          <Property Name="RangeNumber" Type="int" />
+          <Property Name="Code" Type="nvarchar(max)" />
+          <Property Name="Title" Type="nvarchar(max)" />
+          <Property Name="Description" Type="nvarchar(max)" />
+          <Property Name="StadeDate" Type="datetime" />
+          <Property Name="StadeId" Type="int" />
+          <Property Name="CategoryId" Type="int" />
+          <Property Name="PurposeId" Type="int" />
+          <Property Name="Regime" Type="nvarchar(max)" />
+          <Property Name="Geo" Type="nvarchar(max)" />
+          <Property Name="GNO" Type="nvarchar(max)" />
+          <Property Name="Depth" Type="float" />
+          <Property Name="Qzh" Type="float" />
+          <Property Name="Percent" Type="float" />
+          <Property Name="Qn" Type="float" />
+          <Property Name="Ndin" Type="float" />
+          <Property Name="ExplMethod" Type="nvarchar(max)" />
+          <Property Name="NOstrov" Type="nvarchar(max)" />
+          <Property Name="StartDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="Survey">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="SurveyType" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="groupName" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Date" Type="datetime" Nullable="false" />
+          <Property Name="ObjectType" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="ObjectKod" Type="int" Nullable="false" />
+          <Property Name="Key" Type="int" Nullable="false" />
+          <Property Name="Plan" Type="float" />
+          <Property Name="Graphic" Type="float" />
+          <Property Name="Fact" Type="float" />
+          <Property Name="SourceType" Type="int" />
+          <Property Name="Comment1" Type="nvarchar(max)" />
+          <Property Name="Comment2" Type="nvarchar(max)" />
+          <Property Name="Created" Type="datetime" Nullable="false" />
+          <Property Name="Author" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="LastSaved" Type="datetime" Nullable="false" />
+          <Property Name="LastEditor" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Param1" Type="float" />
+          <Property Name="Param2" Type="float" />
+          <Property Name="Param3" Type="float" />
+          <Property Name="Param4" Type="float" />
+          <Property Name="Param5" Type="float" />
+          <Property Name="Param6" Type="float" />
+          <Property Name="Param7" Type="float" />
+          <Property Name="Param8" Type="float" />
+          <Property Name="Param9" Type="float" />
+          <Property Name="Param10" Type="float" />
+          <Property Name="Param11" Type="float" />
+          <Property Name="Param12" Type="float" />
+          <Property Name="Param13" Type="float" />
+          <Property Name="Param14" Type="float" />
+          <Property Name="Param15" Type="float" />
+          <Property Name="Param16" Type="float" />
+          <Property Name="Param17" Type="float" />
+          <Property Name="Param18" Type="float" />
+          <Property Name="Param19" Type="float" />
+          <Property Name="Param20" Type="float" />
+          <Property Name="Param21" Type="float" />
+          <Property Name="Param22" Type="float" />
+          <Property Name="Param23" Type="float" />
+          <Property Name="Param24" Type="float" />
+          <Property Name="Param25" Type="float" />
+          <Property Name="Param26" Type="float" />
+          <Property Name="Param27" Type="float" />
+          <Property Name="Param28" Type="float" />
+          <Property Name="Param29" Type="float" />
+          <Property Name="Param30" Type="float" />
+          <Property Name="Comment3" Type="nvarchar(max)" />
+          <Property Name="Comment4" Type="nvarchar(max)" />
+          <Property Name="Comment5" Type="nvarchar(max)" />
+          <Property Name="Comment6" Type="nvarchar(max)" />
+          <Property Name="Comment7" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="SURVEY_INFO">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="SurveyType" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="groupName" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="kodTPP" Type="int" Nullable="false" />
+          <Property Name="Status" Type="int" Nullable="false" />
+          <Property Name="Date" Type="datetime" Nullable="false" />
+          <Property Name="Created" Type="datetime" Nullable="false" />
+          <Property Name="Author" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="LastSaved" Type="datetime" Nullable="false" />
+          <Property Name="LastEditor" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="ExpireTime" Type="datetime" />
+          <Property Name="FinishedTime" Type="datetime" />
+          <Property Name="Finisher" Type="nvarchar(max)" />
+          <Property Name="ClosedTime" Type="datetime" />
+          <Property Name="FullFlag" Type="bit" Nullable="false" />
+          <Property Name="SendTime" Type="datetime" />
+          <Property Name="SkvId" Type="uniqueidentifier" />
+        </EntityType>
+        <EntityContainer Name="Хранилище RITEK_SURVEY_TPP3ModelContainer">
+          <EntitySet Name="RABOTY_DEVELOPMENT_COMMON" EntityType="Self.RABOTY_DEVELOPMENT_COMMON" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="RABOTY_DEVELOPMENT_DAILY" EntityType="Self.RABOTY_DEVELOPMENT_DAILY" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="RABOTY_DEVELOPMENT_WORKS" EntityType="Self.RABOTY_DEVELOPMENT_WORKS" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="RABOTY_DRILLING_COMMON" EntityType="Self.RABOTY_DRILLING_COMMON" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="RABOTY_DRILLING_DRIFTING" EntityType="Self.RABOTY_DRILLING_DRIFTING" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="RABOTY_DRILLING_PERSONAL" EntityType="Self.RABOTY_DRILLING_PERSONAL" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="RABOTY_DRILLING_WORKS" EntityType="Self.RABOTY_DRILLING_WORKS" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="RABOTY_REPAIR_COMMON" EntityType="Self.RABOTY_REPAIR_COMMON" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="RABOTY_REPAIR_DAILY" EntityType="Self.RABOTY_REPAIR_DAILY" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="RABOTY_REPAIR_WORKS" EntityType="Self.RABOTY_REPAIR_WORKS" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SKV_NSI" EntityType="Self.SKV_NSI" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Survey" EntityType="Self.Survey" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SURVEY_INFO" EntityType="Self.SURVEY_INFO" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Config" EntityType="Self.Config" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [Config].[Name] AS [Name], 
+    [Config].[Value] AS [Value], 
+    [Config].[Description] AS [Description]
+    FROM [dbo].[Config] AS [Config]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="PERSON_OBJECT_ACCESS" EntityType="Self.PERSON_OBJECT_ACCESS" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [PERSON_OBJECT_ACCESS].[Id] AS [Id], 
+    [PERSON_OBJECT_ACCESS].[Login] AS [Login], 
+    [PERSON_OBJECT_ACCESS].[kodTPP] AS [kodTPP], 
+    [PERSON_OBJECT_ACCESS].[kodCEH] AS [kodCEH], 
+    [PERSON_OBJECT_ACCESS].[AccessLevel] AS [AccessLevel], 
+    [PERSON_OBJECT_ACCESS].[DELETED] AS [DELETED]
+    FROM [dbo].[PERSON_OBJECT_ACCESS] AS [PERSON_OBJECT_ACCESS]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="PERSON_ROLES" EntityType="Self.PERSON_ROLES" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [PERSON_ROLES].[Id] AS [Id], 
+    [PERSON_ROLES].[Login] AS [Login], 
+    [PERSON_ROLES].[RoleId] AS [RoleId], 
+    [PERSON_ROLES].[DELETED] AS [DELETED]
+    FROM [dbo].[PERSON_ROLES] AS [PERSON_ROLES]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="PERSONAL" EntityType="Self.PERSONAL" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [PERSONAL].[Id] AS [Id], 
+    [PERSONAL].[Login] AS [Login], 
+    [PERSONAL].[Name] AS [Name], 
+    [PERSONAL].[Password] AS [Password], 
+    [PERSONAL].[kodTPP] AS [kodTPP]
+    FROM [dbo].[PERSONAL] AS [PERSONAL]</DefiningQuery>
+          </EntitySet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="RITEK_SURVEY_TPP3Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="RABOTY_DEVELOPMENT_COMMON">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Guid" Nullable="false" />
+          <Property Name="SkvId" Type="Guid" Nullable="false" />
+          <Property Name="StartDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="FinishDate" Type="DateTime" Precision="3" />
+          <Property Name="Contractor" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Master" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Account" Type="Int32" />
+          <Property Name="Position" Type="Int32" />
+          <Property Name="NumberInPosition" Type="Int32" />
+          <Property Name="WaitingCount" Type="Int32" />
+          <Property Name="WaitingDebit" Type="Double" />
+          <Property Name="ProjectDepth" Type="Double" />
+          <Property Name="ProjectLevel" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="DevelopStartDatePlan" Type="DateTime" Precision="3" />
+          <Property Name="DevelopStartDateFact" Type="DateTime" Precision="3" />
+          <Property Name="DevelopFinishDatePlan" Type="DateTime" Precision="3" />
+          <Property Name="DevelopFinishDateFact" Type="DateTime" Precision="3" />
+          <Property Name="ImplementDatePlan" Type="DateTime" Precision="3" />
+          <Property Name="ImplementDateFact" Type="DateTime" Precision="3" />
+          <Property Name="PerfInterval" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="NormoTime" Type="Double" />
+          <Property Name="ActDate" Type="DateTime" Precision="3" />
+          <Property Name="ContinueOnPlan" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CommonTime" Type="Double" />
+          <Property Name="NonNormoTime" Type="Double" />
+          <Property Name="Created" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Author" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="LastSaved" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="LastEditor" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityType Name="RABOTY_DEVELOPMENT_DAILY">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Guid" Nullable="false" />
+          <Property Name="CommonId" Type="Guid" Nullable="false" />
+          <Property Name="Date" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Created" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Author" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="LastSaved" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="LastEditor" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityType Name="RABOTY_DEVELOPMENT_WORKS">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Guid" Nullable="false" />
+          <Property Name="CommonId" Type="Guid" Nullable="false" />
+          <Property Name="Date" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Shift" Type="Int32" />
+          <Property Name="Face" Type="Int32" />
+          <Property Name="Drift" Type="Double" />
+          <Property Name="Duration" Type="Double" />
+          <Property Name="Work" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Created" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Author" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="LastSaved" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="LastEditor" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityType Name="RABOTY_DRILLING_COMMON">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Guid" Nullable="false" />
+          <Property Name="SkvId" Type="Guid" Nullable="false" />
+          <Property Name="StartDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="FinishDate" Type="DateTime" Precision="3" />
+          <Property Name="DrillingEngine" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Contractor" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Master" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Supervisor" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ProjectDepth" Type="Double" />
+          <Property Name="ProjectLevel" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="DrillStartDatePlan" Type="DateTime" Precision="3" />
+          <Property Name="DrillStartDateFact" Type="DateTime" Precision="3" />
+          <Property Name="DrillFinishDatePlan" Type="DateTime" Precision="3" />
+          <Property Name="DrillFinishDateFact" Type="DateTime" Precision="3" />
+          <Property Name="ImplementDatePlan" Type="DateTime" Precision="3" />
+          <Property Name="ImplementDateFact" Type="DateTime" Precision="3" />
+          <Property Name="SpeedPlan" Type="Double" />
+          <Property Name="SpeedFact" Type="Double" />
+          <Property Name="ContsructionPlan" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ContsructionFact" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ParamsPlan" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ParamsFact" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="RegimePlan" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="RegimeFact" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="KNBKPlan" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="KNBKFact" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Created" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Author" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="LastSaved" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="LastEditor" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityType Name="RABOTY_DRILLING_DRIFTING">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Guid" Nullable="false" />
+          <Property Name="CommonId" Type="Guid" Nullable="false" />
+          <Property Name="Date" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Plan" Type="Double" />
+          <Property Name="Fact" Type="Double" />
+          <Property Name="Created" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Author" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="LastSaved" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="LastEditor" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityType Name="RABOTY_DRILLING_PERSONAL">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Guid" Nullable="false" />
+          <Property Name="CommonId" Type="Guid" Nullable="false" />
+          <Property Name="Date" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Shift" Type="Int32" Nullable="false" />
+          <Property Name="PersonName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Created" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Author" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="LastSaved" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="LastEditor" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityType Name="RABOTY_DRILLING_WORKS">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Guid" Nullable="false" />
+          <Property Name="CommonId" Type="Guid" Nullable="false" />
+          <Property Name="Date" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Shift" Type="Int32" />
+          <Property Name="Face" Type="Int32" />
+          <Property Name="Drift" Type="Double" />
+          <Property Name="Duration" Type="Double" />
+          <Property Name="Work" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Created" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Author" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="LastSaved" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="LastEditor" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Norma" Type="Double" />
+          <Property Name="Fact" Type="Double" />
+          <Property Name="Delay" Type="Double" />
+        </EntityType>
+        <EntityType Name="RABOTY_REPAIR_COMMON">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Guid" Nullable="false" />
+          <Property Name="SkvId" Type="Guid" Nullable="false" />
+          <Property Name="StartDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="FinishDate" Type="DateTime" Precision="3" />
+          <Property Name="Contractor" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Elevator" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ComissionDate" Type="DateTime" Precision="3" />
+          <Property Name="RepairStartDate" Type="DateTime" Precision="3" />
+          <Property Name="RepairFinishDate" Type="DateTime" Precision="3" />
+          <Property Name="WorkingDaysCount" Type="Double" />
+          <Property Name="RejectedReason" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="FluidDebit" Type="Double" />
+          <Property Name="OilDebit" Type="Double" />
+          <Property Name="NDin" Type="Double" />
+          <Property Name="Pz" Type="Double" />
+          <Property Name="TargetDepth" Type="Double" />
+          <Property Name="CurrentDepth" Type="Double" />
+          <Property Name="ProjectLevel" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="PerfInterval" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Diameter" Type="Double" />
+          <Property Name="GNO_before" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="GNO_after" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Suspension_before" Type="Double" />
+          <Property Name="Suspension_after" Type="Double" />
+          <Property Name="PlanProcedures" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="NormoTime" Type="Double" />
+          <Property Name="Created" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Author" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="LastSaved" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="LastEditor" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="RepairReasonId" Type="Int32" />
+        </EntityType>
+        <EntityType Name="RABOTY_REPAIR_DAILY">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Guid" Nullable="false" />
+          <Property Name="CommonId" Type="Guid" Nullable="false" />
+          <Property Name="Date" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Normative" Type="Double" />
+          <Property Name="FromRepairStart" Type="Double" />
+          <Property Name="StartedPlan" Type="DateTime" Precision="3" />
+          <Property Name="PlanWorks" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="BrigadeMoving" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="RepairPurpose" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="LateReason" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Created" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Author" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="LastSaved" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="LastEditor" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityType Name="RABOTY_REPAIR_WORKS">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Guid" Nullable="false" />
+          <Property Name="CommonId" Type="Guid" Nullable="false" />
+          <Property Name="Date" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Shift" Type="Int32" />
+          <Property Name="Face" Type="Int32" />
+          <Property Name="Drift" Type="Double" />
+          <Property Name="Duration" Type="Double" />
+          <Property Name="NormDuration" Type="Double" />
+          <Property Name="DeltaDuration" Type="Double" />
+          <Property Name="ProductiveTime" Type="Double" />
+          <Property Name="NonProductiveTimeCustomer" Type="Double" />
+          <Property Name="NonProductiveTimeContractor" Type="Double" />
+          <Property Name="Work" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Created" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Author" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="LastSaved" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="LastEditor" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityType Name="SKV_NSI">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Guid" Nullable="false" />
+          <Property Name="Number" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="BushId" Type="Int32" />
+          <Property Name="kodMST" Type="Int32" />
+          <Property Name="kodSKV" Type="Int32" />
+          <Property Name="RangeNumber" Type="Int32" />
+          <Property Name="Code" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Title" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="StadeDate" Type="DateTime" Precision="3" />
+          <Property Name="StadeId" Type="Int32" />
+          <Property Name="CategoryId" Type="Int32" />
+          <Property Name="PurposeId" Type="Int32" />
+          <Property Name="Regime" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Geo" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="GNO" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Depth" Type="Double" />
+          <Property Name="Qzh" Type="Double" />
+          <Property Name="Percent" Type="Double" />
+          <Property Name="Qn" Type="Double" />
+          <Property Name="Ndin" Type="Double" />
+          <Property Name="ExplMethod" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="NOstrov" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="StartDate" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="Survey">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Guid" Nullable="false" />
+          <Property Name="SurveyType" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="groupName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Date" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="ObjectType" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ObjectKod" Type="Int32" Nullable="false" />
+          <Property Name="Key" Type="Int32" Nullable="false" />
+          <Property Name="Plan" Type="Double" />
+          <Property Name="Graphic" Type="Double" />
+          <Property Name="Fact" Type="Double" />
+          <Property Name="SourceType" Type="Int32" />
+          <Property Name="Comment1" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Comment2" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Created" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Author" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="LastSaved" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="LastEditor" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Param1" Type="Double" />
+          <Property Name="Param2" Type="Double" />
+          <Property Name="Param3" Type="Double" />
+          <Property Name="Param4" Type="Double" />
+          <Property Name="Param5" Type="Double" />
+          <Property Name="Param6" Type="Double" />
+          <Property Name="Param7" Type="Double" />
+          <Property Name="Param8" Type="Double" />
+          <Property Name="Param9" Type="Double" />
+          <Property Name="Param10" Type="Double" />
+          <Property Name="Param11" Type="Double" />
+          <Property Name="Param12" Type="Double" />
+          <Property Name="Param13" Type="Double" />
+          <Property Name="Param14" Type="Double" />
+          <Property Name="Param15" Type="Double" />
+          <Property Name="Param16" Type="Double" />
+          <Property Name="Param17" Type="Double" />
+          <Property Name="Param18" Type="Double" />
+          <Property Name="Param19" Type="Double" />
+          <Property Name="Param20" Type="Double" />
+          <Property Name="Param21" Type="Double" />
+          <Property Name="Param22" Type="Double" />
+          <Property Name="Param23" Type="Double" />
+          <Property Name="Param24" Type="Double" />
+          <Property Name="Param25" Type="Double" />
+          <Property Name="Param26" Type="Double" />
+          <Property Name="Param27" Type="Double" />
+          <Property Name="Param28" Type="Double" />
+          <Property Name="Param29" Type="Double" />
+          <Property Name="Param30" Type="Double" />
+          <Property Name="Comment3" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Comment4" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Comment5" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Comment6" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Comment7" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="SURVEY_INFO">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="SurveyType" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="groupName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="kodTPP" Type="Int32" Nullable="false" />
+          <Property Name="Status" Type="Int32" Nullable="false" />
+          <Property Name="Date" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Created" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Author" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="LastSaved" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="LastEditor" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ExpireTime" Type="DateTime" Precision="3" />
+          <Property Name="FinishedTime" Type="DateTime" Precision="3" />
+          <Property Name="Finisher" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ClosedTime" Type="DateTime" Precision="3" />
+          <Property Name="FullFlag" Type="Boolean" Nullable="false" />
+          <Property Name="SendTime" Type="DateTime" Precision="3" />
+          <Property Name="SkvId" Type="Guid" />
+        </EntityType>
+        <EntityType Name="Config">
+          <Key>
+            <PropertyRef Name="Name" />
+            <PropertyRef Name="Value" />
+          </Key>
+          <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Value" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="PERSON_OBJECT_ACCESS">
+          <Key>
+            <PropertyRef Name="Id" />
+            <PropertyRef Name="Login" />
+            <PropertyRef Name="kodTPP" />
+            <PropertyRef Name="kodCEH" />
+            <PropertyRef Name="AccessLevel" />
+            <PropertyRef Name="DELETED" />
+          </Key>
+          <Property Name="Id" Type="Guid" Nullable="false" />
+          <Property Name="Login" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="kodTPP" Type="Int32" Nullable="false" />
+          <Property Name="kodCEH" Type="Int32" Nullable="false" />
+          <Property Name="AccessLevel" Type="Int32" Nullable="false" />
+          <Property Name="DELETED" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityType Name="PERSON_ROLES">
+          <Key>
+            <PropertyRef Name="Id" />
+            <PropertyRef Name="Login" />
+            <PropertyRef Name="RoleId" />
+            <PropertyRef Name="DELETED" />
+          </Key>
+          <Property Name="Id" Type="Guid" Nullable="false" />
+          <Property Name="Login" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="RoleId" Type="Int32" Nullable="false" />
+          <Property Name="DELETED" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityType Name="PERSONAL">
+          <Key>
+            <PropertyRef Name="Id" />
+            <PropertyRef Name="Login" />
+            <PropertyRef Name="Name" />
+            <PropertyRef Name="kodTPP" />
+          </Key>
+          <Property Name="Id" Type="Guid" Nullable="false" />
+          <Property Name="Login" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Password" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="kodTPP" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="RITEK_SURVEY_TPP3Entities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="RABOTY_DEVELOPMENT_COMMON" EntityType="Self.RABOTY_DEVELOPMENT_COMMON" />
+          <EntitySet Name="RABOTY_DEVELOPMENT_DAILY" EntityType="Self.RABOTY_DEVELOPMENT_DAILY" />
+          <EntitySet Name="RABOTY_DEVELOPMENT_WORKS" EntityType="Self.RABOTY_DEVELOPMENT_WORKS" />
+          <EntitySet Name="RABOTY_DRILLING_COMMON" EntityType="Self.RABOTY_DRILLING_COMMON" />
+          <EntitySet Name="RABOTY_DRILLING_DRIFTING" EntityType="Self.RABOTY_DRILLING_DRIFTING" />
+          <EntitySet Name="RABOTY_DRILLING_PERSONAL" EntityType="Self.RABOTY_DRILLING_PERSONAL" />
+          <EntitySet Name="RABOTY_DRILLING_WORKS" EntityType="Self.RABOTY_DRILLING_WORKS" />
+          <EntitySet Name="RABOTY_REPAIR_COMMON" EntityType="Self.RABOTY_REPAIR_COMMON" />
+          <EntitySet Name="RABOTY_REPAIR_DAILY" EntityType="Self.RABOTY_REPAIR_DAILY" />
+          <EntitySet Name="RABOTY_REPAIR_WORKS" EntityType="Self.RABOTY_REPAIR_WORKS" />
+          <EntitySet Name="SKV_NSI" EntityType="Self.SKV_NSI" />
+          <EntitySet Name="Survey" EntityType="Self.Survey" />
+          <EntitySet Name="SURVEY_INFO" EntityType="Self.SURVEY_INFO" />
+          <EntitySet Name="Config" EntityType="Self.Config" />
+          <EntitySet Name="PERSON_OBJECT_ACCESS" EntityType="Self.PERSON_OBJECT_ACCESS" />
+          <EntitySet Name="PERSON_ROLES" EntityType="Self.PERSON_ROLES" />
+          <EntitySet Name="PERSONAL" EntityType="Self.PERSONAL" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="Хранилище RITEK_SURVEY_TPP3ModelContainer" CdmEntityContainer="RITEK_SURVEY_TPP3Entities">
+          <EntitySetMapping Name="RABOTY_DEVELOPMENT_COMMON">
+            <EntityTypeMapping TypeName="RITEK_SURVEY_TPP3Model.RABOTY_DEVELOPMENT_COMMON">
+              <MappingFragment StoreEntitySet="RABOTY_DEVELOPMENT_COMMON">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="SkvId" ColumnName="SkvId" />
+                <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+                <ScalarProperty Name="FinishDate" ColumnName="FinishDate" />
+                <ScalarProperty Name="Contractor" ColumnName="Contractor" />
+                <ScalarProperty Name="Master" ColumnName="Master" />
+                <ScalarProperty Name="Account" ColumnName="Account" />
+                <ScalarProperty Name="Position" ColumnName="Position" />
+                <ScalarProperty Name="NumberInPosition" ColumnName="NumberInPosition" />
+                <ScalarProperty Name="WaitingCount" ColumnName="WaitingCount" />
+                <ScalarProperty Name="WaitingDebit" ColumnName="WaitingDebit" />
+                <ScalarProperty Name="ProjectDepth" ColumnName="ProjectDepth" />
+                <ScalarProperty Name="ProjectLevel" ColumnName="ProjectLevel" />
+                <ScalarProperty Name="DevelopStartDatePlan" ColumnName="DevelopStartDatePlan" />
+                <ScalarProperty Name="DevelopStartDateFact" ColumnName="DevelopStartDateFact" />
+                <ScalarProperty Name="DevelopFinishDatePlan" ColumnName="DevelopFinishDatePlan" />
+                <ScalarProperty Name="DevelopFinishDateFact" ColumnName="DevelopFinishDateFact" />
+                <ScalarProperty Name="ImplementDatePlan" ColumnName="ImplementDatePlan" />
+                <ScalarProperty Name="ImplementDateFact" ColumnName="ImplementDateFact" />
+                <ScalarProperty Name="PerfInterval" ColumnName="PerfInterval" />
+                <ScalarProperty Name="NormoTime" ColumnName="NormoTime" />
+                <ScalarProperty Name="ActDate" ColumnName="ActDate" />
+                <ScalarProperty Name="ContinueOnPlan" ColumnName="ContinueOnPlan" />
+                <ScalarProperty Name="CommonTime" ColumnName="CommonTime" />
+                <ScalarProperty Name="NonNormoTime" ColumnName="NonNormoTime" />
+                <ScalarProperty Name="Created" ColumnName="Created" />
+                <ScalarProperty Name="Author" ColumnName="Author" />
+                <ScalarProperty Name="LastSaved" ColumnName="LastSaved" />
+                <ScalarProperty Name="LastEditor" ColumnName="LastEditor" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="RABOTY_DEVELOPMENT_DAILY">
+            <EntityTypeMapping TypeName="RITEK_SURVEY_TPP3Model.RABOTY_DEVELOPMENT_DAILY">
+              <MappingFragment StoreEntitySet="RABOTY_DEVELOPMENT_DAILY">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="CommonId" ColumnName="CommonId" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="Created" ColumnName="Created" />
+                <ScalarProperty Name="Author" ColumnName="Author" />
+                <ScalarProperty Name="LastSaved" ColumnName="LastSaved" />
+                <ScalarProperty Name="LastEditor" ColumnName="LastEditor" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="RABOTY_DEVELOPMENT_WORKS">
+            <EntityTypeMapping TypeName="RITEK_SURVEY_TPP3Model.RABOTY_DEVELOPMENT_WORKS">
+              <MappingFragment StoreEntitySet="RABOTY_DEVELOPMENT_WORKS">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="CommonId" ColumnName="CommonId" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="Shift" ColumnName="Shift" />
+                <ScalarProperty Name="Face" ColumnName="Face" />
+                <ScalarProperty Name="Drift" ColumnName="Drift" />
+                <ScalarProperty Name="Duration" ColumnName="Duration" />
+                <ScalarProperty Name="Work" ColumnName="Work" />
+                <ScalarProperty Name="Created" ColumnName="Created" />
+                <ScalarProperty Name="Author" ColumnName="Author" />
+                <ScalarProperty Name="LastSaved" ColumnName="LastSaved" />
+                <ScalarProperty Name="LastEditor" ColumnName="LastEditor" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="RABOTY_DRILLING_COMMON">
+            <EntityTypeMapping TypeName="RITEK_SURVEY_TPP3Model.RABOTY_DRILLING_COMMON">
+              <MappingFragment StoreEntitySet="RABOTY_DRILLING_COMMON">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="SkvId" ColumnName="SkvId" />
+                <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+                <ScalarProperty Name="FinishDate" ColumnName="FinishDate" />
+                <ScalarProperty Name="DrillingEngine" ColumnName="DrillingEngine" />
+                <ScalarProperty Name="Contractor" ColumnName="Contractor" />
+                <ScalarProperty Name="Master" ColumnName="Master" />
+                <ScalarProperty Name="Supervisor" ColumnName="Supervisor" />
+                <ScalarProperty Name="ProjectDepth" ColumnName="ProjectDepth" />
+                <ScalarProperty Name="ProjectLevel" ColumnName="ProjectLevel" />
+                <ScalarProperty Name="DrillStartDatePlan" ColumnName="DrillStartDatePlan" />
+                <ScalarProperty Name="DrillStartDateFact" ColumnName="DrillStartDateFact" />
+                <ScalarProperty Name="DrillFinishDatePlan" ColumnName="DrillFinishDatePlan" />
+                <ScalarProperty Name="DrillFinishDateFact" ColumnName="DrillFinishDateFact" />
+                <ScalarProperty Name="ImplementDatePlan" ColumnName="ImplementDatePlan" />
+                <ScalarProperty Name="ImplementDateFact" ColumnName="ImplementDateFact" />
+                <ScalarProperty Name="SpeedPlan" ColumnName="SpeedPlan" />
+                <ScalarProperty Name="SpeedFact" ColumnName="SpeedFact" />
+                <ScalarProperty Name="ContsructionPlan" ColumnName="ContsructionPlan" />
+                <ScalarProperty Name="ContsructionFact" ColumnName="ContsructionFact" />
+                <ScalarProperty Name="ParamsPlan" ColumnName="ParamsPlan" />
+                <ScalarProperty Name="ParamsFact" ColumnName="ParamsFact" />
+                <ScalarProperty Name="RegimePlan" ColumnName="RegimePlan" />
+                <ScalarProperty Name="RegimeFact" ColumnName="RegimeFact" />
+                <ScalarProperty Name="KNBKPlan" ColumnName="KNBKPlan" />
+                <ScalarProperty Name="KNBKFact" ColumnName="KNBKFact" />
+                <ScalarProperty Name="Created" ColumnName="Created" />
+                <ScalarProperty Name="Author" ColumnName="Author" />
+                <ScalarProperty Name="LastSaved" ColumnName="LastSaved" />
+                <ScalarProperty Name="LastEditor" ColumnName="LastEditor" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="RABOTY_DRILLING_DRIFTING">
+            <EntityTypeMapping TypeName="RITEK_SURVEY_TPP3Model.RABOTY_DRILLING_DRIFTING">
+              <MappingFragment StoreEntitySet="RABOTY_DRILLING_DRIFTING">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="CommonId" ColumnName="CommonId" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="Plan" ColumnName="Plan" />
+                <ScalarProperty Name="Fact" ColumnName="Fact" />
+                <ScalarProperty Name="Created" ColumnName="Created" />
+                <ScalarProperty Name="Author" ColumnName="Author" />
+                <ScalarProperty Name="LastSaved" ColumnName="LastSaved" />
+                <ScalarProperty Name="LastEditor" ColumnName="LastEditor" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="RABOTY_DRILLING_PERSONAL">
+            <EntityTypeMapping TypeName="RITEK_SURVEY_TPP3Model.RABOTY_DRILLING_PERSONAL">
+              <MappingFragment StoreEntitySet="RABOTY_DRILLING_PERSONAL">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="CommonId" ColumnName="CommonId" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="Shift" ColumnName="Shift" />
+                <ScalarProperty Name="PersonName" ColumnName="PersonName" />
+                <ScalarProperty Name="Created" ColumnName="Created" />
+                <ScalarProperty Name="Author" ColumnName="Author" />
+                <ScalarProperty Name="LastSaved" ColumnName="LastSaved" />
+                <ScalarProperty Name="LastEditor" ColumnName="LastEditor" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="RABOTY_DRILLING_WORKS">
+            <EntityTypeMapping TypeName="RITEK_SURVEY_TPP3Model.RABOTY_DRILLING_WORKS">
+              <MappingFragment StoreEntitySet="RABOTY_DRILLING_WORKS">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="CommonId" ColumnName="CommonId" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="Shift" ColumnName="Shift" />
+                <ScalarProperty Name="Face" ColumnName="Face" />
+                <ScalarProperty Name="Drift" ColumnName="Drift" />
+                <ScalarProperty Name="Duration" ColumnName="Duration" />
+                <ScalarProperty Name="Work" ColumnName="Work" />
+                <ScalarProperty Name="Created" ColumnName="Created" />
+                <ScalarProperty Name="Author" ColumnName="Author" />
+                <ScalarProperty Name="LastSaved" ColumnName="LastSaved" />
+                <ScalarProperty Name="LastEditor" ColumnName="LastEditor" />
+                <ScalarProperty Name="Norma" ColumnName="Norma" />
+                <ScalarProperty Name="Fact" ColumnName="Fact" />
+                <ScalarProperty Name="Delay" ColumnName="Delay" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="RABOTY_REPAIR_COMMON">
+            <EntityTypeMapping TypeName="RITEK_SURVEY_TPP3Model.RABOTY_REPAIR_COMMON">
+              <MappingFragment StoreEntitySet="RABOTY_REPAIR_COMMON">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="SkvId" ColumnName="SkvId" />
+                <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+                <ScalarProperty Name="FinishDate" ColumnName="FinishDate" />
+                <ScalarProperty Name="Contractor" ColumnName="Contractor" />
+                <ScalarProperty Name="Elevator" ColumnName="Elevator" />
+                <ScalarProperty Name="ComissionDate" ColumnName="ComissionDate" />
+                <ScalarProperty Name="RepairStartDate" ColumnName="RepairStartDate" />
+                <ScalarProperty Name="RepairFinishDate" ColumnName="RepairFinishDate" />
+                <ScalarProperty Name="WorkingDaysCount" ColumnName="WorkingDaysCount" />
+                <ScalarProperty Name="RejectedReason" ColumnName="RejectedReason" />
+                <ScalarProperty Name="FluidDebit" ColumnName="FluidDebit" />
+                <ScalarProperty Name="OilDebit" ColumnName="OilDebit" />
+                <ScalarProperty Name="NDin" ColumnName="NDin" />
+                <ScalarProperty Name="Pz" ColumnName="Pz" />
+                <ScalarProperty Name="TargetDepth" ColumnName="TargetDepth" />
+                <ScalarProperty Name="CurrentDepth" ColumnName="CurrentDepth" />
+                <ScalarProperty Name="ProjectLevel" ColumnName="ProjectLevel" />
+                <ScalarProperty Name="PerfInterval" ColumnName="PerfInterval" />
+                <ScalarProperty Name="Diameter" ColumnName="Diameter" />
+                <ScalarProperty Name="GNO_before" ColumnName="GNO_before" />
+                <ScalarProperty Name="GNO_after" ColumnName="GNO_after" />
+                <ScalarProperty Name="Suspension_before" ColumnName="Suspension_before" />
+                <ScalarProperty Name="Suspension_after" ColumnName="Suspension_after" />
+                <ScalarProperty Name="PlanProcedures" ColumnName="PlanProcedures" />
+                <ScalarProperty Name="NormoTime" ColumnName="NormoTime" />
+                <ScalarProperty Name="Created" ColumnName="Created" />
+                <ScalarProperty Name="Author" ColumnName="Author" />
+                <ScalarProperty Name="LastSaved" ColumnName="LastSaved" />
+                <ScalarProperty Name="LastEditor" ColumnName="LastEditor" />
+                <ScalarProperty Name="RepairReasonId" ColumnName="RepairReasonId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="RABOTY_REPAIR_DAILY">
+            <EntityTypeMapping TypeName="RITEK_SURVEY_TPP3Model.RABOTY_REPAIR_DAILY">
+              <MappingFragment StoreEntitySet="RABOTY_REPAIR_DAILY">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="CommonId" ColumnName="CommonId" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="Normative" ColumnName="Normative" />
+                <ScalarProperty Name="FromRepairStart" ColumnName="FromRepairStart" />
+                <ScalarProperty Name="StartedPlan" ColumnName="StartedPlan" />
+                <ScalarProperty Name="PlanWorks" ColumnName="PlanWorks" />
+                <ScalarProperty Name="BrigadeMoving" ColumnName="BrigadeMoving" />
+                <ScalarProperty Name="RepairPurpose" ColumnName="RepairPurpose" />
+                <ScalarProperty Name="LateReason" ColumnName="LateReason" />
+                <ScalarProperty Name="Created" ColumnName="Created" />
+                <ScalarProperty Name="Author" ColumnName="Author" />
+                <ScalarProperty Name="LastSaved" ColumnName="LastSaved" />
+                <ScalarProperty Name="LastEditor" ColumnName="LastEditor" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="RABOTY_REPAIR_WORKS">
+            <EntityTypeMapping TypeName="RITEK_SURVEY_TPP3Model.RABOTY_REPAIR_WORKS">
+              <MappingFragment StoreEntitySet="RABOTY_REPAIR_WORKS">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="CommonId" ColumnName="CommonId" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="Shift" ColumnName="Shift" />
+                <ScalarProperty Name="Face" ColumnName="Face" />
+                <ScalarProperty Name="Drift" ColumnName="Drift" />
+                <ScalarProperty Name="Duration" ColumnName="Duration" />
+                <ScalarProperty Name="NormDuration" ColumnName="NormDuration" />
+                <ScalarProperty Name="DeltaDuration" ColumnName="DeltaDuration" />
+                <ScalarProperty Name="ProductiveTime" ColumnName="ProductiveTime" />
+                <ScalarProperty Name="NonProductiveTimeCustomer" ColumnName="NonProductiveTimeCustomer" />
+                <ScalarProperty Name="NonProductiveTimeContractor" ColumnName="NonProductiveTimeContractor" />
+                <ScalarProperty Name="Work" ColumnName="Work" />
+                <ScalarProperty Name="Created" ColumnName="Created" />
+                <ScalarProperty Name="Author" ColumnName="Author" />
+                <ScalarProperty Name="LastSaved" ColumnName="LastSaved" />
+                <ScalarProperty Name="LastEditor" ColumnName="LastEditor" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SKV_NSI">
+            <EntityTypeMapping TypeName="RITEK_SURVEY_TPP3Model.SKV_NSI">
+              <MappingFragment StoreEntitySet="SKV_NSI">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Number" ColumnName="Number" />
+                <ScalarProperty Name="BushId" ColumnName="BushId" />
+                <ScalarProperty Name="kodMST" ColumnName="kodMST" />
+                <ScalarProperty Name="kodSKV" ColumnName="kodSKV" />
+                <ScalarProperty Name="RangeNumber" ColumnName="RangeNumber" />
+                <ScalarProperty Name="Code" ColumnName="Code" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="StadeDate" ColumnName="StadeDate" />
+                <ScalarProperty Name="StadeId" ColumnName="StadeId" />
+                <ScalarProperty Name="CategoryId" ColumnName="CategoryId" />
+                <ScalarProperty Name="PurposeId" ColumnName="PurposeId" />
+                <ScalarProperty Name="Regime" ColumnName="Regime" />
+                <ScalarProperty Name="Geo" ColumnName="Geo" />
+                <ScalarProperty Name="GNO" ColumnName="GNO" />
+                <ScalarProperty Name="Depth" ColumnName="Depth" />
+                <ScalarProperty Name="Qzh" ColumnName="Qzh" />
+                <ScalarProperty Name="Percent" ColumnName="Percent" />
+                <ScalarProperty Name="Qn" ColumnName="Qn" />
+                <ScalarProperty Name="Ndin" ColumnName="Ndin" />
+                <ScalarProperty Name="ExplMethod" ColumnName="ExplMethod" />
+                <ScalarProperty Name="NOstrov" ColumnName="NOstrov" />
+                <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Survey">
+            <EntityTypeMapping TypeName="RITEK_SURVEY_TPP3Model.Survey">
+              <MappingFragment StoreEntitySet="Survey">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="SurveyType" ColumnName="SurveyType" />
+                <ScalarProperty Name="groupName" ColumnName="groupName" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="ObjectType" ColumnName="ObjectType" />
+                <ScalarProperty Name="ObjectKod" ColumnName="ObjectKod" />
+                <ScalarProperty Name="Key" ColumnName="Key" />
+                <ScalarProperty Name="Plan" ColumnName="Plan" />
+                <ScalarProperty Name="Graphic" ColumnName="Graphic" />
+                <ScalarProperty Name="Fact" ColumnName="Fact" />
+                <ScalarProperty Name="SourceType" ColumnName="SourceType" />
+                <ScalarProperty Name="Comment1" ColumnName="Comment1" />
+                <ScalarProperty Name="Comment2" ColumnName="Comment2" />
+                <ScalarProperty Name="Created" ColumnName="Created" />
+                <ScalarProperty Name="Author" ColumnName="Author" />
+                <ScalarProperty Name="LastSaved" ColumnName="LastSaved" />
+                <ScalarProperty Name="LastEditor" ColumnName="LastEditor" />
+                <ScalarProperty Name="Param1" ColumnName="Param1" />
+                <ScalarProperty Name="Param2" ColumnName="Param2" />
+                <ScalarProperty Name="Param3" ColumnName="Param3" />
+                <ScalarProperty Name="Param4" ColumnName="Param4" />
+                <ScalarProperty Name="Param5" ColumnName="Param5" />
+                <ScalarProperty Name="Param6" ColumnName="Param6" />
+                <ScalarProperty Name="Param7" ColumnName="Param7" />
+                <ScalarProperty Name="Param8" ColumnName="Param8" />
+                <ScalarProperty Name="Param9" ColumnName="Param9" />
+                <ScalarProperty Name="Param10" ColumnName="Param10" />
+                <ScalarProperty Name="Param11" ColumnName="Param11" />
+                <ScalarProperty Name="Param12" ColumnName="Param12" />
+                <ScalarProperty Name="Param13" ColumnName="Param13" />
+                <ScalarProperty Name="Param14" ColumnName="Param14" />
+                <ScalarProperty Name="Param15" ColumnName="Param15" />
+                <ScalarProperty Name="Param16" ColumnName="Param16" />
+                <ScalarProperty Name="Param17" ColumnName="Param17" />
+                <ScalarProperty Name="Param18" ColumnName="Param18" />
+                <ScalarProperty Name="Param19" ColumnName="Param19" />
+                <ScalarProperty Name="Param20" ColumnName="Param20" />
+                <ScalarProperty Name="Param21" ColumnName="Param21" />
+                <ScalarProperty Name="Param22" ColumnName="Param22" />
+                <ScalarProperty Name="Param23" ColumnName="Param23" />
+                <ScalarProperty Name="Param24" ColumnName="Param24" />
+                <ScalarProperty Name="Param25" ColumnName="Param25" />
+                <ScalarProperty Name="Param26" ColumnName="Param26" />
+                <ScalarProperty Name="Param27" ColumnName="Param27" />
+                <ScalarProperty Name="Param28" ColumnName="Param28" />
+                <ScalarProperty Name="Param29" ColumnName="Param29" />
+                <ScalarProperty Name="Param30" ColumnName="Param30" />
+                <ScalarProperty Name="Comment3" ColumnName="Comment3" />
+                <ScalarProperty Name="Comment4" ColumnName="Comment4" />
+                <ScalarProperty Name="Comment5" ColumnName="Comment5" />
+                <ScalarProperty Name="Comment6" ColumnName="Comment6" />
+                <ScalarProperty Name="Comment7" ColumnName="Comment7" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SURVEY_INFO">
+            <EntityTypeMapping TypeName="RITEK_SURVEY_TPP3Model.SURVEY_INFO">
+              <MappingFragment StoreEntitySet="SURVEY_INFO">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="SurveyType" ColumnName="SurveyType" />
+                <ScalarProperty Name="groupName" ColumnName="groupName" />
+                <ScalarProperty Name="kodTPP" ColumnName="kodTPP" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="Created" ColumnName="Created" />
+                <ScalarProperty Name="Author" ColumnName="Author" />
+                <ScalarProperty Name="LastSaved" ColumnName="LastSaved" />
+                <ScalarProperty Name="LastEditor" ColumnName="LastEditor" />
+                <ScalarProperty Name="ExpireTime" ColumnName="ExpireTime" />
+                <ScalarProperty Name="FinishedTime" ColumnName="FinishedTime" />
+                <ScalarProperty Name="Finisher" ColumnName="Finisher" />
+                <ScalarProperty Name="ClosedTime" ColumnName="ClosedTime" />
+                <ScalarProperty Name="FullFlag" ColumnName="FullFlag" />
+                <ScalarProperty Name="SendTime" ColumnName="SendTime" />
+                <ScalarProperty Name="SkvId" ColumnName="SkvId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Config">
+            <EntityTypeMapping TypeName="RITEK_SURVEY_TPP3Model.Config">
+              <MappingFragment StoreEntitySet="Config">
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Value" ColumnName="Value" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PERSON_OBJECT_ACCESS">
+            <EntityTypeMapping TypeName="RITEK_SURVEY_TPP3Model.PERSON_OBJECT_ACCESS">
+              <MappingFragment StoreEntitySet="PERSON_OBJECT_ACCESS">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Login" ColumnName="Login" />
+                <ScalarProperty Name="kodTPP" ColumnName="kodTPP" />
+                <ScalarProperty Name="kodCEH" ColumnName="kodCEH" />
+                <ScalarProperty Name="AccessLevel" ColumnName="AccessLevel" />
+                <ScalarProperty Name="DELETED" ColumnName="DELETED" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PERSON_ROLES">
+            <EntityTypeMapping TypeName="RITEK_SURVEY_TPP3Model.PERSON_ROLES">
+              <MappingFragment StoreEntitySet="PERSON_ROLES">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Login" ColumnName="Login" />
+                <ScalarProperty Name="RoleId" ColumnName="RoleId" />
+                <ScalarProperty Name="DELETED" ColumnName="DELETED" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PERSONAL">
+            <EntityTypeMapping TypeName="RITEK_SURVEY_TPP3Model.PERSONAL">
+              <MappingFragment StoreEntitySet="PERSONAL">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Login" ColumnName="Login" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="kodTPP" ColumnName="kodTPP" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Нет" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
